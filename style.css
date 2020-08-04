@@ -10,7 +10,7 @@ body {
 }
 
 .half-width {
-    height: 620px;
+    height: 570px;
     background: #222436;
     padding: 30px;
     text-align: center;
@@ -41,6 +41,7 @@ input[type='text']{
     border: 2px solid #858299;
     height: 50px;
     padding: 10px;
+    text-align: center;
 }
 input[type='text']:focus {
     background-color: #3D4153;
@@ -60,12 +61,6 @@ color: #fff;
 
 .calc-button-row {
 width: 100%;
-}
-
-.btn{
-    background: #425062;
-    color: #fff;
-    font-size: 25px;
 }
 
 .button {
@@ -105,9 +100,15 @@ color: #E0B612;
 .notify-section{
     width: 35%;
     margin: 0 auto;
-    display: none;
 }
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;
+}
+
+#negative-message{
+    display: none;
+}
+#positive-message{
+    display: none;
 }
