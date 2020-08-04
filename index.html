@@ -18,31 +18,31 @@
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <input id="pinInput" class="form-control" type="text">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button">8</div>
-                              <div class="button">9</div>
+                              <div class="button"><button class="btn" onclick="buttonClick('7')">7</button></div>
+                              <div class="button"><button class="btn" onclick="buttonClick('8')">8</button></div>
+                              <div class="button"><button class="btn" onclick="buttonClick('9')">9</button></div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                              <div class="button"><button class="btn" onclick="buttonClick('4')">4</button></div>
+                              <div class="button"><button class="btn" onclick="buttonClick('5')">5</button></div>
+                              <div class="button"><button class="btn" onclick="buttonClick('6')">6</button></div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                              <div class="button"><button class="btn" onclick="buttonClick('1')">1</button></div>
+                              <div class="button"><button class="btn" onclick="buttonClick('2')">2</button></div>
+                              <div class="button"><button class="btn" onclick="buttonClick('3')">3</button></div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"><</div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
+                                <div class="button"><button class="btn" onclick="backSpace()"><</button></div>
+                                <div class="button"><button class="btn" onclick="buttonClick('0')">0</button></div>
+                                <div class="button"><button class="btn" onclick="buttonClick('')">C</button></div>
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn">Submit</button>
+                                <button id="submitBtn" type="submit" class="submit-btn">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                     </div>
@@ -56,6 +56,7 @@
     </div>
 
     <script>
+        /////generate-pin event handler
         document.getElementById("generate-pin").addEventListener('click' , function(){
           const generateNumber = document.getElementById("fourDigitPin");
           const pinCount = parseInt(generateNumber.value);
@@ -63,6 +64,28 @@
           generateNumber.value = newPinCount;
 
         })
+
+        /////submit button event handler
+        document.getElementById("submitBtn").addEventListener('click' , function(){
+            const capturePin = document.getElementById("pinInput");
+            
+        })
+
+        ///// Bonus part
+        document.getElementById('pinInput').value = '';
+          function buttonClick(num){
+          let screen = document.getElementById('pinInput');
+            screen.value += num;
+            if(num == ''){
+            screen.value = num;
+            }
+        }
+
+        function backSpace(){
+           var screen = document.getElementById('pinInput').value;
+           var backSpace = screen.slice(0, screen.length - 1);
+           document.getElementById('pinInput').value = backSpace;
+}
 
     </script>
 </body>

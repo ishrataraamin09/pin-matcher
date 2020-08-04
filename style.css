@@ -10,7 +10,7 @@ body {
 }
 
 .half-width {
-    height: 570px;
+    height: 620px;
     background: #222436;
     padding: 30px;
     text-align: center;
@@ -60,6 +60,12 @@ color: #fff;
 
 .calc-button-row {
 width: 100%;
+}
+
+.btn{
+    background: #425062;
+    color: #fff;
+    font-size: 25px;
 }
 
 .button {
